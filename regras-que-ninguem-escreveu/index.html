@@ -1,0 +1,493 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>As regras que ninguém escreveu | Ruan Rocha</title>
+<meta name="description" content="Testei quanto de uma decisão de design uma LLM consegue carregar, usando um sistema visual que ajudei a criar há nove anos.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/site.css">
+</head>
+<body>
+<header class="wrap masthead" id="topo" tabindex="-1">
+  <div class="sig"><span class="a">Ruan</span><span class="b">Rocha</span></div>
+  <p class="label" style="margin-top:16px">Outubro de 2026</p>
+  <h1>As regras que ninguém escreveu</h1>
+  <p class="lede">Testei quanto de uma decisão de design uma LLM consegue carregar, usando um sistema visual que ajudei a criar há nove anos. Ela carrega forma, não carrega relação, e não avisa quando parou de conseguir.</p>
+      <details class="en" lang="en">
+        <summary>In English</summary>
+        <div class="en-body">
+          <p>This is a case about how much of a design decision a large language model can carry. The short answer: it carries form, and carries it well. What it does not carry is relation, the part of design where one element's position depends on another. And it does not tell you when it stopped being able to.</p>
+          <p>In 2017, six of us made Laranjeira Deco, a campaign for a Brazilian t-shirt printing brand. Each piece confronted a prejudice women face, drawn in Art Deco line work. There was never a manual. The rules lived with three illustrators and were never written down. Nine years later I reconstructed them from the pieces themselves, froze the list, and used it to judge everything the model produced.</p>
+          <p>The new piece reads "Ningu&eacute;m me deu licen&ccedil;a" (Nobody gave me permission) at the top. The objections written on the steps she climbs are "Bonita demais pra isso" (Too pretty for that), "Ela &eacute; muito agressiva" (She is too aggressive) and "Quem cuida das crian&ccedil;as?" (Who is looking after the children?).</p>
+        </div>
+      </details>
+  <nav aria-label="Índice da página">
+    <details class="toc">
+      <summary>Índice</summary>
+      <div class="toc-cols">
+        <div>
+          <ol aria-label="Abertura do case">
+            <li><a href="#sec-01"><span class="n">01</span><span class="t">Abertura</span></a></li>
+            <li><a href="#sec-02"><span class="n">02</span><span class="t">As três peças</span></a></li>
+          </ol>
+        </div>
+        <div>
+          <p class="toc-part"><span class="label">Primeira parte</span><span class="t">O sistema</span></p>
+          <ol aria-label="Primeira parte, O sistema">
+            <li><a href="#sec-03"><span class="n">03</span><span class="t">O sistema que ninguém tinha escrito</span></a></li>
+            <li><a href="#sec-04"><span class="n">04</span><span class="t">A minha leitura e a da máquina</span></a></li>
+            <li><a href="#sec-05"><span class="n">05</span><span class="t">O que a documentação de 2017 devolveu</span></a></li>
+          </ol>
+        </div>
+        <div>
+          <p class="toc-part"><span class="label">Segunda parte</span><span class="t">O teste</span></p>
+          <ol aria-label="Segunda parte, O teste">
+            <li><a href="#sec-06"><span class="n">06</span><span class="t">Os três níveis</span></a></li>
+            <li><a href="#sec-07"><span class="n">07</span><span class="t">Quatro tentativas, duas certas</span></a></li>
+            <li><a href="#sec-08"><span class="n">08</span><span class="t">Onde ela parou</span></a></li>
+          </ol>
+        </div>
+        <div>
+          <p class="toc-part"><span class="label">Terceira parte</span><span class="t">O que fica</span></p>
+          <ol aria-label="Terceira parte, O que fica">
+            <li><a href="#sec-09"><span class="n">09</span><span class="t">O que eu faço com isso</span></a></li>
+            <li><a href="#sec-10"><span class="n">10</span><span class="t">Os limites desse teste</span></a></li>
+            <li><a href="#sec-11"><span class="n">11</span><span class="t">Como usei IA neste trabalho</span></a></li>
+            <li><a href="#sec-12"><span class="n">12</span><span class="t">A peça</span></a></li>
+          </ol>
+        </div>
+      </div>
+    </details>
+  </nav>
+</header>
+
+<main class="wrap">
+
+  <section class="grid" id="sec-01" tabindex="-1">
+    <div class="span-label sec-num"><span class="label">01</span></div>
+    <div class="span-wide sec-title"><h2>Abertura</h2></div>
+    <div class="span-text stack">
+      <p>Lidero 5 designers diretos e um chapter de design de mais de 15 pessoas numa consultoria de inovação, e planejo as formações desse grupo. Decidir se uma ferramenta entra nesse processo é parte do trabalho.</p>
+      <p>Quase nada do que fazemos é visual. Escolhi um modelo de imagem justamente por isso: quando a decisão é visível, a falha também é.</p>
+      <p>Peguei um sistema visual que criamos em 2017, escrevi as regras de design que usamos, e usei essas regras para medir uma coisa: quanto de uma decisão de design uma LLM consegue carregar no contexto de produção de imagens.</p>
+      <p>A resposta curta é que ela carrega bem forma. Quanto mais eu especificava, mais perto o resultado chegava. O que ela não carrega é relação: a parte do design em que a posição de um elemento depende do outro. Outro ponto que percebi é que ela não avisa quando não consegue, afirmando ter feito ajustes que não fez.</p>
+    </div>
+  </section>
+
+  <section class="grid" id="sec-02" tabindex="-1">
+    <div class="span-label sec-num"><span class="label">02</span></div>
+    <div class="span-wide sec-title"><h2>As três peças</h2></div>
+    <div class="span-full">
+      <div class="row row-3 scroller">
+        <figure>
+          <div class="shot"><img src="../assets/img/regras-que-ninguem-escreveu/n1-sem-briefing.jpg" alt="Camiseta preta fotografada sobre piso de concreto. A estampa traz uma ave de asas abertas em dourado, com raios de sol atrás e arranha-céus na base, dentro de moldura retangular. Nenhuma palavra na peça."></div>
+          <figcaption>
+            <div class="label cap-label">Sem briefing</div>
+            <p class="note">Ouro aplicado como massa, com brilho e gradiente. Cenário atrás da figura. Nenhum texto.</p>
+          </figcaption>
+        </figure>
+        <figure>
+          <div class="shot"><img src="../assets/img/regras-que-ninguem-escreveu/n2-com-regras.jpg" alt="Estampa sobre camiseta preta. Mulher negra de frente, mãos na cintura, cabelo em formas geométricas verdes e azuis, corpo em planos chapados de laranja, amarelo e verde. Duas figuras pequenas em contorno dourado reagem nos cantos de baixo. Texto em dourado, de cima para baixo: OCUPO TODOS OS ESPAÇOS. NÃO PEÇO LICENÇA."></div>
+          <figcaption>
+            <div class="label cap-label">Com as regras</div>
+            <p class="note">Ouro em contorno, figura geometrizada, cor restrita ao corpo. Os opositores aparecem menores, reagindo a ela.</p>
+          </figcaption>
+        </figure>
+        <figure>
+          <div class="shot"><img src="../assets/img/regras-que-ninguem-escreveu/ajuste-reto.jpg" alt="Pôster sobre fundo grafite. Mulher de perfil sobe a escadaria de um edifício Art Déco, com raios atrás do topo. Texto em dourado, de cima para baixo: NINGUÉM ME DEU LICENÇA. BONITA DEMAIS PRA ISSO. ELA É MUITO AGRESSIVA. QUEM CUIDA DAS CRIANÇAS?"></div>
+          <figcaption>
+            <div class="label cap-label">Com o conceito</div>
+            <p class="note">Todos os elementos no lugar: a figura sobe e as objeções estão nos degraus.</p>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+    <div class="span-text stack" style="margin-top:48px">
+      <p>Três níveis de especificação, mesmo modelo e mesma configuração. O que muda entre elas é o que eu coloquei no prompt. A terceira é a melhor das quatro saídas do nível mais detalhado, já com o ajuste de título curvo para reto que o modelo fez a pedido. As duas primeiras são saída crua.</p>
+    </div>
+  </section>
+
+  <section class="grid">
+    <div class="span-full part">
+      <div class="lb">Primeira parte</div>
+      <h2 class="tt">O sistema</h2>
+      <div class="ft">As regras que sustentavam o Laranjeira Deco, reconstruídas nove anos depois, e o que a documentação da época tinha registrado.</div>
+    </div>
+  </section>
+
+  <div id="sentinela" aria-hidden="true"></div>
+
+  <section class="grid" id="sec-03" tabindex="-1">
+    <div class="span-label sec-num"><span class="label">03</span></div>
+    <div class="span-wide sec-title"><h3>O sistema que ninguém tinha escrito</h3></div>
+    <div class="span-text stack">
+      <p>Em 2017, num trabalho do curso de Design Digital da UFC Quixadá, criamos o Laranjeira Deco, uma campanha para uma marca de estamparia chamada Te conheço, Laranjeira. Éramos seis: André Ágacy, Erisson Nunes, Juliana Barreto, Maria Carolina, Nathalia Pinto e eu. Três de nós ilustramos.</p>
+    </div>
+
+    <div class="span-full" style="margin-top:48px">
+      <div class="strip-2017">
+        <img src="../assets/img/regras-que-ninguem-escreveu/p2017-ame.jpg" alt="Pôster sobre fundo preto. Drag queen de vestido vermelho em pé sobre uma mesa, braço erguido, entre dois homens de perfil que a observam. Emblema oval Art Déco dourado em volta. Texto na faixa de baixo: AME A SI MESMA.">
+        <img src="../assets/img/regras-que-ninguem-escreveu/p2017-alert.jpg" alt="Pôster sobre fundo preto. Mulher de cabelo roxo sentada num trono Art Déco de circuitos verdes e dourados, com um notebook no colo. Texto no topo, em duas linhas: if (preconceito === true){ alert(“SIM, EU POSSO!”); }">
+        <img src="../assets/img/regras-que-ninguem-escreveu/p2017-manas.jpg" alt="Pôster sobre fundo preto. Oito perfis de mulheres de etnias, cabelos e roupas diferentes dispostos em roda, voltados para fora. No centro, emblema circular dourado com o texto: O MUNDO É DAS MANAS.">
+        <img src="../assets/img/regras-que-ninguem-escreveu/p2017-cor.jpg" alt="Pôster sobre fundo branco. Mulher negra de vestido verde, mãos na cintura, construída em planos chapados. Texto de cima para baixo: MINHA COR CARREGA HISTÓRIA. MINHA HISTÓRIA ME EMPODERA.">
+      </div>
+      <figcaption style="margin-top:16px">
+        <p class="note">Quatro das peças da campanha, na escala relativa em que foram feitas. Três ilustradores diferentes, três famílias tipográficas diferentes. O projeto completo está publicado desde 2017 no <a href="https://www.behance.net/gallery/59779479/Laranjeira-Deco">Behance</a>.</p>
+      </figcaption>
+
+      <div class="brand-mark">
+        <img src="../assets/img/regras-que-ninguem-escreveu/marca.jpg" alt="Marca da campanha: laranja estilizada em contorno dourado sobre fundo grafite, com leque Art Déco acima e abaixo de uma faixa central com o texto LARANJEIRA DECO.">
+        <figcaption style="margin-top:16px">
+          <div class="label cap-label">A marca</div>
+          <p class="note">A marca segue as mesmas regras: contorno, ouro como estrutura, tipografia em caixa alta.</p>
+        </figcaption>
+      </div>
+    </div>
+
+    <div class="span-text stack" style="margin-top:48px">
+      <p>Três ilustradores diferentes, três famílias tipográficas diferentes: Decotech, Modern Deco e Stout Deco. E mesmo assim o conjunto lê como um sistema só. Nunca houve manual. A coerência vinha de regras que todo mundo seguia mas que não tínhamos escrito.</p>
+      <p>Nove anos depois, eu também não lembrava mais delas. Então sentei na frente das peças e escrevi o que via, sem consultar nada sobre o movimento, para tentar não enviesar demais minha leitura.</p>
+    </div>
+
+    <div class="span-wide seq" style="margin-top:40px">
+      <div><div class="n">01</div><div class="b"><div class="item-t">O ornamento é contorno, nunca massa.</div><div class="item-d">Linha, não preenchimento. Vale para grafismo e para letra.</div></div></div>
+      <div><div class="n">02</div><div class="b"><div class="item-t">O dourado é estrutura, não tinta.</div><div class="item-d">Moldura, filete, emblema e tipografia são sempre ouro. Cor fora dessa paleta só aparece na figura: roupa, cabelo, pele.</div></div></div>
+      <div><div class="n">03</div><div class="b"><div class="item-t">A tipografia é majoritariamente caixa alta, de traço fino e uniforme.</div><div class="item-d">Letra alta e estreita, terminais retos, às vezes vazada com linha interna acompanhando a haste.</div></div></div>
+      <div><div class="n">04</div><div class="b"><div class="item-t">A figura humana é geometrizada.</div><div class="item-d">Planos chapados, ângulos definidos, sem volume pictórico.</div></div></div>
+      <div><div class="n">05</div><div class="b"><div class="item-t">Toda peça carrega uma crítica, não um ornamento.</div><div class="item-d">Ornamento Déco sem frase é decoração.</div></div></div>
+      <div><div class="n">06</div><div class="b"><div class="item-t">A crítica tem uma forma fixa: empoderamento, não sofrimento.</div><div class="item-d">A pessoa visada pelo preconceito ocupa o centro, em afirmação. Quando há oposição, ela aparece menor e em reação. Nenhuma peça mostra a vítima como vítima.</div></div></div>
+    </div>
+
+    <div class="span-text stack" style="margin-top:48px">
+      <div class="crit"><div class="bar"></div><div class="body"><div class="head">Essa lista é a primeira vez que o sistema existe em texto.</div><p>Datei e congelei antes de rodar qualquer coisa. Ela é o critério com que avaliei tudo que veio depois.</p></div></div>
+    </div>
+  </section>
+
+  <section class="grid" id="sec-04" tabindex="-1">
+    <div class="span-label sec-num"><span class="label">04</span></div>
+    <div class="span-wide sec-title"><h3>A minha leitura e a da máquina</h3></div>
+    <div class="span-text stack">
+      <p>Depois de congelar a lista, dei as mesmas peças para uma LLM (Claude Opus 5 Max) e pedi os princípios do sistema, sem dizer o que eu tinha escrito.</p>
+      <p>Ela viu quatro regras que eu não tinha nomeado.</p>
+    </div>
+
+    <div class="span-wide list-items" style="margin-top:32px">
+      <div><div class="item-t">Figura sobre vazio</div><div class="item-d">Nenhuma peça tem cenário, horizonte ou sombra projetada. O fundo é sempre chapado. Não há uma única exceção, e eu não tinha percebido.</div></div>
+      <div><div class="item-t">O texto nunca flutua</div><div class="item-d">Está sempre contido em caixa, faixa ou filete, sempre no topo ou na base, nunca sobre o corpo, nunca na diagonal.</div></div>
+      <div><div class="item-t">Eixo vertical de simetria</div><div class="item-d">Inclusive na peça onde a personagem está em posição assimétrica.</div></div>
+      <div><div class="item-t">Elenco rotativo</div><div class="item-d">Os personagens não se repetem entre peças.</div></div>
+    </div>
+
+    <div class="span-text stack" style="margin-top:48px">
+      <p>E disse em uma frase o que eu tinha dito em duas regras separadas: <em>a estrutura gráfica é monocromática mesmo quando a figura é policromática.</em> É melhor que a minha formulação.</p>
+      <p>O que ela não viu foi o assunto. <span class="hl">Em nenhum momento registrou que todas as peças falam de preconceito contra mulheres.</span> Descreveu o mecanismo (crítica) com precisão e perdeu de quem a crítica era. Pelo critério dela, uma peça sobre preconceito contra imigrantes entraria no conjunto. Pelo meu, não.</p>
+    </div>
+
+    <div class="span-wide pull" style="margin-top:40px">Ela leu a forma do argumento. Não leu o argumento.</div>
+  </section>
+
+  <section class="grid" id="sec-05" tabindex="-1">
+    <div class="span-label sec-num"><span class="label">05</span></div>
+    <div class="span-wide sec-title"><h3>O que a documentação de 2017 devolveu</h3></div>
+    <div class="span-text stack">
+      <p>Só depois de tudo pronto eu abri o artigo e os slides que a gente entregou na época.</p>
+      <p>As regras visuais não estavam lá. O que existe é o conceito de cada peça (o que cada uma queria dizer) e os artistas de referência. A gramática visual nunca foi escrita por nós.</p>
+      <p>Mas tinha uma frase que desmentia minha memória. Quando reconstruí o sistema, eu disse que a crítica social vinha do próprio Art Déco. O texto de 2017 diz o contrário, com todas as letras. Segundo ele, o Art Déco era:</p>
+      <blockquote class="quote">"um movimento artístico meramente decorativo, sem nenhum significado além da beleza industrial"</blockquote>
+      <p>A crítica foi adicionada pois esse era um dos princípios da Te conheço, Laranjeira! Está escrito, em 2017, que o movimento não tinha nada disso.</p>
+      <p>Em nove anos, essa decisão virou herança estilística na minha lembrança. <span class="hl">O que se perdeu não foi a regra. Foi de onde ela vinha.</span></p>
+      <div class="crit"><div class="bar"></div><div class="body"><div class="head">Isso me interessa mais que o resto do experimento, porque não é um problema de memória individual.</div><p>A documentação existia e estava completa no que se propunha. Ela registrou <strong>o que cada peça dizia</strong> e nunca <strong>por que ela era assim</strong>. Uma pessoa que já herdou um design system de outro time talvez já tenha sentido o mesmo.</p></div></div>
+    </div>
+  </section>
+
+  <section class="grid">
+    <div class="span-full part">
+      <div class="lb">Segunda parte</div>
+      <h2 class="tt">O teste</h2>
+      <div class="ft">Três níveis de especificação, quatro amostras do mesmo prompt e dois pedidos de ajuste, medidos contra aquelas regras.</div>
+    </div>
+  </section>
+
+  <section class="grid" id="sec-06" tabindex="-1">
+    <div class="span-label sec-num"><span class="label">06</span></div>
+    <div class="span-wide sec-title"><h3>Os três níveis</h3></div>
+    <div class="span-text stack">
+      <p>Rodei a mesma tarefa, criar uma estampa nova usando as regras, em três níveis de especificação, em outubro de 2026. Mesma plataforma (Gemini), mesmo modelo e mesma configuração (3.1 Pro Alto / Nano Banana 2), conversa limpa a cada vez.</p>
+    </div>
+
+    <div class="span-wide" style="margin-top:32px;margin-bottom:24px"><h4 class="lvl">Sem briefing</h4></div>
+    <div class="span-half-a"><figure><div class="shot"><img src="../assets/img/regras-que-ninguem-escreveu/n1-sem-briefing.jpg" alt="A mesma fênix dourada mostrada no início da página, gerada sem briefing."></div><figcaption><p class="note">Ouro como massa, cenário atrás, nenhum texto.</p></figcaption></figure></div>
+    <div class="span-half-b stack"><p>Pedi "uma estampa para camiseta no estilo Art Déco" e nada mais.</p>
+        <p>Veio uma fênix dourada com skyline ao fundo, competente e vazia. Ouro aplicado como massa, com gradiente e brilho, o oposto da regra mais central do sistema. Nenhum texto, nenhuma figura humana, nenhum argumento e cenário atrás.</p>
+        <p>É o <span class="hl">Art Déco de banco de imagens.</span> Sem direção, o modelo foi para a média do rótulo.</p>
+      <details class="prompt"><summary>Ver o prompt</summary><pre>Crie uma estampa para camiseta no estilo Art Déco.</pre></details></div>
+
+    <div class="span-wide" style="margin-top:32px;margin-bottom:24px"><h4 class="lvl">Com as regras</h4></div>
+    <div class="span-half-a"><figure><div class="shot"><img src="../assets/img/regras-que-ninguem-escreveu/n2-com-regras.jpg" alt="A mesma estampa mostrada no início da página, gerada só com as regras."></div><figcaption><p class="note">Forma correta, argumento genérico.</p></figcaption></figure></div>
+    <div class="span-half-b stack"><p>Dei as regras do sistema, sem dizer sobre o que a peça deveria falar. O recorte era dela.</p>
+        <p><span class="hl">Acertou quase tudo da forma:</span> ouro em contorno, figura geometrizada, cor restrita ao corpo, tipografia predominantemente caixa alta e vazada, texto ancorado no topo e na base, oposição menor e em reação. Minha previsão era que ela derivaria assim que saísse do que estava escrito. Não derivou.</p>
+        <p>O que faltou foi profundidade de argumento. "OCUPO TODOS OS ESPAÇOS" afirma de forma genérica. Fica perto da autoajuda, que é algo que tentamos evitar.</p>
+        <p>E aconteceu uma coisa que vale registrar: ela escolheu sozinha o recorte "ocupação de espaços" e escreveu <strong>NÃO PEÇO LICENÇA</strong>. O conceito que eu tinha congelado dias antes, sem ela ter acesso, dizia <strong>NINGUÉM ME DEU LICENÇA</strong>.</p>
+        <p>Não é telepatia. "Ocupação de espaços" estava na minha lista de princípios, e a metáfora de licença estava latente ali. Mas mostra até onde a especificação leva sozinha.</p>
+      <details class="prompt"><summary>Ver o prompt</summary><pre>Crie uma estampa para camiseta de uma marca que segue estas regras:
+
+Traçado: formas geométricas básicas e linhas retas. O ornamento é sempre contorno, nunca massa preenchida. O mesmo tratamento vale para grafismo e para letra.
+
+Cor: dourado como cor dominante do ornamento e da tipografia, contra fundo de baixa saturação. A estrutura gráfica é monocromática. Cores fora dessa paleta aparecem apenas na figura — roupa, cabelo, pele — nunca no ornamento.
+
+Tipografia: caixa alta, traço fino e uniforme sem modulação, letra alta e estreita, terminais retos. Em parte das aplicações a letra é vazada, com linha interna acompanhando a haste.
+
+Ilustração: figura humana construída por geometrização — planos chapados, ângulos definidos, sem volume pictórico.
+
+Argumento: a peça carrega uma crítica, não um ornamento. A crítica é ao preconceito que mulheres enfrentam — sobre o corpo, a raça, a identidade, a ocupação de espaços.
+
+Forma do argumento: empoderamento, não sofrimento. A mulher visada pelo preconceito ocupa o centro, em afirmação. Se houver oposição representada, ela aparece menor, lateral, em reação. A peça nunca mostra a vítima como vítima.
+
+Escolha o recorte e componha a cena.</pre></details></div>
+
+    <div class="span-wide" style="margin-top:32px;margin-bottom:24px"><h4 class="lvl">Com o conceito, primeira saída</h4></div>
+    <div class="span-half-a"><figure><div class="shot"><img src="../assets/img/regras-que-ninguem-escreveu/amostra-1.jpg" alt="Pôster sobre fundo grafite. Mulher de perfil numa escadaria de edifício Art Déco vista em perspectiva, com os dois pés apoiados no mesmo degrau. Texto em dourado, de cima para baixo: NINGUÉM ME DEU LICENÇA. BONITA DEMAIS PRA ISSO. ELA É MUITO AGRESSIVA. QUEM CUIDA DAS CRIANÇAS?"></div><figcaption><p class="note">Todos os elementos no lugar, e a figura não sobe.</p></figcaption></figure></div>
+    <div class="span-half-b stack"><p>Aqui entreguei a peça resolvida: um edifício cívico Déco inventado, a escadaria em zigurate, a mulher subindo, as objeções escritas nos degraus: "QUEM CUIDA DAS CRIANÇAS?", "ELA É MUITO AGRESSIVA", "BONITA DEMAIS PRA ISSO". E no topo, "NINGUÉM ME DEU LICENÇA". As objeções são os degraus: ela pisa neles para subir.</p>
+        <p><span class="hl">Executou todos os elementos. E perdeu a subida:</span> a figura caminha de lado, no mesmo degrau.</p>
+        <p>Não é erro de estilo. A subida é a tese da peça: ela pisa nas objeções para passar por cima delas. Andando na horizontal, a figura se move sem vencer nada.</p>
+        <p>E a direção estava escrita duas vezes no prompt, em palavras diferentes: "subindo a escadaria" e "ela pisa nelas para subir". Não foi ambiguidade do briefing. Qualquer designer lendo o mesmo texto não erraria isso.</p>
+      <details class="prompt"><summary>Ver o prompt</summary><p class="pre-note">As mesmas regras do segundo prompt, na íntegra, seguidas de:</p><pre>A peça é esta:
+
+Cena: um edifício cívico Art Déco inventado, visto de frente. A massa escalonada em zigurate forma uma escadaria central. Filetes verticais finos nas laterais. Um sunburst abre atrás do topo. A arquitetura cria a moldura — sem borda desenhada ao redor.
+
+Figura: uma mulher ao centro, subindo a escadaria, em postura de afirmação e não de esforço.
+
+Texto nos degraus, de baixo para cima:
+QUEM CUIDA DAS CRIANÇAS?
+ELA É MUITO AGRESSIVA
+BONITA DEMAIS PRA ISSO
+
+Texto no topo:
+NINGUÉM ME DEU LICENÇA
+
+As objeções são os degraus: ela pisa nelas para subir.
+
+Não reproduza nenhum edifício real existente.</pre></details></div>
+  </section>
+
+  <section class="grid" id="sec-07" tabindex="-1">
+    <div class="span-label sec-num"><span class="label">07</span></div>
+    <div class="span-wide sec-title"><h3>Quatro tentativas, duas certas</h3></div>
+    <div class="span-text stack">
+      <p>Rodei o mesmo prompt mais três vezes, em conversas independentes, para saber se a inversão era acaso ou viés.</p>
+    </div>
+
+    <div class="span-full" style="margin-top:48px">
+      <div class="row row-4 scroller">
+        <figure>
+          <div class="shot"><img src="../assets/img/regras-que-ninguem-escreveu/amostra-1.jpg" alt="Escadaria vista em perspectiva profunda. Os dois pés da figura estão apoiados no mesmo degrau, e as objeções aparecem escritas nos degraus."></div>
+          <figcaption><div class="label cap-label">Amostra 1</div></figcaption>
+        </figure>
+        <figure>
+          <div class="shot"><img src="../assets/img/regras-que-ninguem-escreveu/amostra-2.jpg" alt="Escadaria frontal larga. O pé da frente da figura está num degrau acima do outro, e as objeções correm numa faixa à direita, fora dos degraus."></div>
+          <figcaption><div class="label cap-label">Amostra 2</div></figcaption>
+        </figure>
+        <figure>
+          <div class="shot"><img src="../assets/img/regras-que-ninguem-escreveu/amostra-3.jpg" alt="Escadaria em zigurate. O pé da frente da figura está num degrau acima do outro, e as objeções estão escritas nos degraus."></div>
+          <figcaption><div class="label cap-label">Amostra 3</div></figcaption>
+        </figure>
+        <figure>
+          <div class="shot"><img src="../assets/img/regras-que-ninguem-escreveu/amostra-4.jpg" alt="Escadaria em zigurate com colunas laterais. O pé da frente da figura está num degrau acima do outro, as objeções estão nos degraus e o título NINGUÉM ME DEU LICENÇA aparece curvado em arco sobre os raios."></div>
+          <figcaption><div class="label cap-label">Amostra 4</div></figcaption>
+        </figure>
+      </div>
+
+      <div class="row row-4 scroller crops">
+        <figure>
+          <div class="shot shot-wide shot-x"><svg viewBox="0 0 277.9 159.37" aria-hidden="true"><path fill="#FFFF00" d="M32.01,154.7c-.25.17-.34.23-.84.21-3.25.11-9.1-1.34-6.78-9.46.04-.15.31-.76.52-.97,5.67-3.92,11.34-7.85,17.04-11.72,28.43-19.42,57.28-38.25,86.46-56.52,14.6-9.12,29.28-18.13,44.05-26.96,7.4-4.4,14.79-8.82,22.23-13.14l11.14-6.48s4.27-2.09,10.09-4.81c5.84-2.69,13.24-5.99,19.49-8.42,20.96-8.7,14.42-1.88,2.99,6.21.69-.25-6.27,4.37-13.4,9.05-7.11,4.7-14.38,9.5-14.38,9.5l-12.28,7.17c-7.27,4.26-14.51,8.56-21.73,12.9-14.46,8.65-28.8,17.49-43.08,26.43-14.28,8.93-28.46,18.04-42.56,27.26-14.11,9.21-28.11,18.58-42.02,28.09-5.68,3.85-11.31,7.76-16.95,11.67Z"/><path fill="#FFFF00" d="M265.65,139.38c.26.16.35.22.53.68,1.43,2.94,2.4,8.83-5.98,9.99-.15.02-.82.03-1.09-.08-5.84-3.58-11.66-7.19-17.56-10.67-8.1-4.88-16.29-9.6-24.47-14.33l-12.35-6.96c-4.11-2.34-8.28-4.56-12.42-6.85-16.61-9.04-33.35-17.82-50.3-26.2-16.95-8.38-34.05-16.45-51.29-24.21l-12.97-5.73c-4.33-1.91-8.69-3.73-13.03-5.6l-3.57-1.53-2.79-1.17-5.59-2.31s-4.23-2.1-9.91-5.03c-5.71-2.85-12.85-6.63-18.69-9.87-20.03-10.54-10.71-9.9,2.9-6.25-.32-.19,1.53.31,4.48,1.22,2.93.94,6.97,2.24,11.05,3.55,4.09,1.31,8.19,2.71,11.27,3.78,3.09,1.06,5.16,1.77,5.16,1.77l5.54,2.29,8.08,3.45c8.64,3.64,17.19,7.48,25.76,11.28,17.1,7.69,34.03,15.75,50.83,24.08,16.81,8.31,33.4,17.04,49.86,26.02,8.25,4.46,16.39,9.1,24.56,13.7,8.11,4.7,16.24,9.37,24.27,14.22,5.95,3.51,11.82,7.14,17.71,10.75Z"/></svg><img src="../assets/img/regras-que-ninguem-escreveu/crop-amostra-1.jpg" alt="Recorte ampliado dos pés: os dois sapatos apoiados no mesmo degrau, acima da frase BONITA DEMAIS PRA ISSO."></div>
+          <figcaption><p class="note">Os dois pés no mesmo degrau.</p></figcaption>
+        </figure>
+        <figure>
+          <div class="shot shot-wide shot-x"><svg viewBox="0 0 277.9 159.37" aria-hidden="true"><path fill="#FFFF00" d="M32.01,154.7c-.25.17-.34.23-.84.21-3.25.11-9.1-1.34-6.78-9.46.04-.15.31-.76.52-.97,5.67-3.92,11.34-7.85,17.04-11.72,28.43-19.42,57.28-38.25,86.46-56.52,14.6-9.12,29.28-18.13,44.05-26.96,7.4-4.4,14.79-8.82,22.23-13.14l11.14-6.48s4.27-2.09,10.09-4.81c5.84-2.69,13.24-5.99,19.49-8.42,20.96-8.7,14.42-1.88,2.99,6.21.69-.25-6.27,4.37-13.4,9.05-7.11,4.7-14.38,9.5-14.38,9.5l-12.28,7.17c-7.27,4.26-14.51,8.56-21.73,12.9-14.46,8.65-28.8,17.49-43.08,26.43-14.28,8.93-28.46,18.04-42.56,27.26-14.11,9.21-28.11,18.58-42.02,28.09-5.68,3.85-11.31,7.76-16.95,11.67Z"/><path fill="#FFFF00" d="M265.65,139.38c.26.16.35.22.53.68,1.43,2.94,2.4,8.83-5.98,9.99-.15.02-.82.03-1.09-.08-5.84-3.58-11.66-7.19-17.56-10.67-8.1-4.88-16.29-9.6-24.47-14.33l-12.35-6.96c-4.11-2.34-8.28-4.56-12.42-6.85-16.61-9.04-33.35-17.82-50.3-26.2-16.95-8.38-34.05-16.45-51.29-24.21l-12.97-5.73c-4.33-1.91-8.69-3.73-13.03-5.6l-3.57-1.53-2.79-1.17-5.59-2.31s-4.23-2.1-9.91-5.03c-5.71-2.85-12.85-6.63-18.69-9.87-20.03-10.54-10.71-9.9,2.9-6.25-.32-.19,1.53.31,4.48,1.22,2.93.94,6.97,2.24,11.05,3.55,4.09,1.31,8.19,2.71,11.27,3.78,3.09,1.06,5.16,1.77,5.16,1.77l5.54,2.29,8.08,3.45c8.64,3.64,17.19,7.48,25.76,11.28,17.1,7.69,34.03,15.75,50.83,24.08,16.81,8.31,33.4,17.04,49.86,26.02,8.25,4.46,16.39,9.1,24.56,13.7,8.11,4.7,16.24,9.37,24.27,14.22,5.95,3.51,11.82,7.14,17.71,10.75Z"/></svg><img src="../assets/img/regras-que-ninguem-escreveu/crop-amostra-2.jpg" alt="Recorte ampliado dos pés: o sapato da frente num degrau acima do outro. A frase BONITA DEMAIS PRA ISSO corre numa faixa que não acompanha a linha dos degraus."></div>
+          <figcaption><p class="note">Sobe. Frases fora dos degraus.</p></figcaption>
+        </figure>
+        <figure>
+          <div class="shot shot-wide"><img src="../assets/img/regras-que-ninguem-escreveu/crop-amostra-3.jpg" alt="Recorte ampliado dos pés: o sapato da frente num degrau acima do outro, com a frase BONITA DEMAIS PRA ISSO escrita no próprio degrau."></div>
+          <figcaption><p class="note">Sobe. Frase no degrau.</p></figcaption>
+        </figure>
+        <figure>
+          <div class="shot shot-wide"><img src="../assets/img/regras-que-ninguem-escreveu/crop-amostra-4.jpg" alt="Recorte ampliado dos pés: o sapato da frente num degrau acima do outro, com a frase BONITA DEMAIS PRA ISSO escrita no próprio degrau."></div>
+          <figcaption><p class="note">Sobe. Frase no degrau.</p></figcaption>
+        </figure>
+      </div>
+      <p class="note" style="margin-top:16px">Segunda linha: recorte ampliado da escadaria de cada amostra.</p>
+    </div>
+
+    <div class="span-text stack" style="margin-top:48px">
+      <div class="table-scroll">
+        <table>
+          <thead>
+            <tr><th>Amostra</th><th>Subindo</th><th>Objeções nos degraus</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>1</td><td>não</td><td>sim</td></tr>
+            <tr><td>2</td><td>sim</td><td>não</td></tr>
+            <tr><td>3</td><td>sim</td><td>sim</td></tr>
+            <tr><td>4</td><td>sim</td><td>sim</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Não era viés. A amostra 1 não subiu, caminhou de lado no mesmo degrau; a 2 subiu, mas largou as frases num bloco solto fora da escada. Cada uma acertou o que a outra errou.</p>
+      <p>O que isso mostra é mais específico que "a IA erra": o modelo trata direção, texto e degrau como elementos independentes a posicionar, não como uma ideia em que a posição de um depende do outro. A relação entre eles é o conceito. Em duas de quatro, coincidiu.</p>
+      <div class="crit"><div class="bar"></div><div class="body"><div class="head">A especificação completa não garante o resultado. Ela aumenta a probabilidade dele.</div><p>Quem decide qual das quatro presta é o designer, e esse critério não estava no prompt, nem poderia estar. Ele é a lista que escrevi antes, olhando as peças.</p></div></div>
+    </div>
+  </section>
+
+  <section class="grid" id="sec-08" tabindex="-1">
+    <div class="span-label sec-num"><span class="label">08</span></div>
+    <div class="span-wide sec-title"><h3>Onde ela parou</h3></div>
+    <div class="span-text stack">
+      <p>Peguei a melhor amostra e pedi dois ajustes de diagramação que eu já tinha identificado e resolvido no Photoshop em poucos minutos: igualar a largura da frase do topo à da linha de baixo, e abrir respiro entre o texto e o sunburst.</p>
+      <p>Falhou nos dois. A imagem voltou praticamente idêntica.</p>
+      <p>Antes disso, no mesmo arquivo, eu tinha pedido para endireitar um texto que estava em arco. Fez de primeira, sem quebrar nada em volta.</p>
+    </div>
+
+    <div class="span-full arrow-host" style="margin-top:48px">
+      <svg class="mk-arrow" viewBox="0 0 211.12 88.12" aria-hidden="true"><path fill="#1A1A1A" d="M152.49,56.69l26.58-18.22c-55.13,1.48-118.31,15.84-166.11,42.26-1.34.74-2.93,2.46-3.9,1.92-1.27-.71-1.99-3.49-1.57-5.21,11.14-6.9,21.98-11.82,34.13-16.87,27.68-10.93,55.96-18.46,85.36-23.7l48.35-6.7c-10.67-2.85-32.56-12.58-30.58-19.08.67-2.21,3.95-3.68,6.11-2.54l11.41,6,36.35,10.83,4.94,7.44c1.82,2.75-3.37,5.27-5.28,6.24l-21.12,10.76c-9.27,4.72-18.61,9.65-26.11,16.82l-3.37,3.22c-.82.78-4.48-1.37-4.02-2.51,1.59-3.96,5.14-8.14,8.82-10.66Z"/></svg>
+      <div class="row row-3 scroller">
+        <figure>
+          <div class="shot"><img src="../assets/img/regras-que-ninguem-escreveu/amostra-4.jpg" alt="O título NINGUÉM ME DEU LICENÇA curvado em arco acima dos raios."></div>
+          <figcaption>
+            <div class="label cap-label">Antes</div>
+            <p class="note">Título em arco.</p>
+          </figcaption>
+        </figure>
+        <figure>
+          <div class="shot"><img src="../assets/img/regras-que-ninguem-escreveu/ajuste-reto.jpg" alt="O mesmo título, agora em linha reta no topo, com o restante da peça inalterado."></div>
+          <figcaption>
+            <div class="label cap-label">Pedido de estado</div>
+            <p class="note">"Curvo para reto". Feito de primeira.</p>
+          </figcaption>
+        </figure>
+        <figure>
+          <div class="shot"><img src="../assets/img/regras-que-ninguem-escreveu/ajuste-falhou.jpg" alt="A peça depois do segundo pedido, sem diferença visível na largura do título nem no espaço entre o título e os raios."></div>
+          <figcaption>
+            <div class="label cap-label">Pedido de relação</div>
+            <p class="note">"Mesma largura que", "mais espaço entre". Voltou idêntica.</p>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+
+    <div class="span-text stack" style="margin-top:48px">
+      <p>A diferença entre os dois pedidos é o achado:</p>
+    </div>
+
+    <div class="span-wide table-scroll" style="margin:24px 0">
+        <table>
+          <thead>
+            <tr><th>Pedido</th><th>Natureza</th><th>Resultado</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>"curvo para reto"</td><td>mudar o <strong>estado</strong> de um elemento</td><td>de primeira</td></tr>
+            <tr><td>"mesma largura que", "mais espaço entre"</td><td><strong>relação métrica</strong> entre elementos</td><td>falhou duas vezes</td></tr>
+          </tbody>
+        </table>
+    </div>
+
+    <div class="span-text stack">
+      <p>O aprendizado não é entre pedidos fáceis e difíceis, é entre mudar o que uma coisa é e medir/posicionar uma coisa em relação a outra. É a mesma falha da amostra 2, em outra escala.</p>
+      <div class="crit"><div class="bar"></div><div class="body"><div class="head">E, o pior, ela afirmou ter feito o ajuste.</div><p>Não sinalizou limite, não disse que não conseguia. Quem não tem o critério para conferir aceita e segue.</p></div></div>
+    </div>
+  </section>
+
+  <section class="grid">
+    <div class="span-full part">
+      <div class="lb">Terceira parte</div>
+      <h2 class="tt">O que fica</h2>
+      <div class="ft">Conclusões de prática, com as ressalvas que as limitam.</div>
+    </div>
+  </section>
+
+  <section class="grid" id="sec-09" tabindex="-1">
+    <div class="span-label sec-num"><span class="label">09</span></div>
+    <div class="span-wide sec-title"><h3>O que eu faço com isso</h3></div>
+    <div class="span-text stack">
+      <p>Três coisas que eu levaria para um time antes de massificar a utilização desse tipo de ferramenta, e uma que já mudei no meu próprio trabalho:</p>
+      <div class="crit"><div class="bar"></div><div class="body"><div class="head">O critério vem antes da ferramenta.</div><p>Não é possível avaliar o que sai se o que deveria sair não está escrito. A lista que fiz em duas horas é o que tornou o experimento inteiro legível. Sem ela, as quatro amostras são só quatro imagens parecidas.</p></div></div>
+      <div class="crit"><div class="bar"></div><div class="body"><div class="head">Revisão humana obrigatória onde há relação entre elementos.</div><p>Hierarquia, alinhamento, ritmo, qualquer coisa que dependa de medir uma parte contra outra. É aí que a ferramenta falha calada.</p></div></div>
+      <div class="crit"><div class="bar"></div><div class="body"><div class="head">O que não está documentado de forma assertiva não é transmitido.</div><p>Nem para a máquina, nem para a equipe nova, nem para você mesmo daqui a nove anos. Um modelo que recebe só os artefatos reconstrói a forma com precisão e não reconstrói o motivo: a LLM leu as peças, nomeou quatro regras que eu não tinha visto e não registrou de quem era a crítica. A documentação de 2017 fez o mesmo movimento, sem máquina nenhuma. Quem mantém um design system em que a regra está nos componentes e o porquê está na cabeça de três pessoas está exatamente nessa posição.</p></div></div><div class="crit"><div class="bar"></div><div class="body"><div class="head">O que já mudou no meu próprio trabalho.</div><p>Parei de pedir relação. Reposicionar um elemento em função de outro, igualar a medida de dois, abrir espaço entre duas coisas: resolvo fora do modelo, e uso o modelo só para o que ele muda de estado. É a primeira coisa que testo em qualquer ferramenta nova, antes de testar qualquer outra.</p></div></div>
+    </div>
+  </section>
+
+  <section class="grid" id="sec-10" tabindex="-1">
+    <div class="span-label sec-num"><span class="label">10</span></div>
+    <div class="span-wide sec-title"><h3>Os limites desse teste</h3></div>
+    <div class="span-text stack caveat">
+      <p>Uma peça, um sistema, um modelo. Sem grupo de controle.</p>
+      <p>O que vi sobre relação entre elementos vale para o que testei: geração de imagem, um modelo, uma tarefa. Que isso se repita em outras superfícies é hipótese minha, não resultado daqui.</p>
+      <p>A construção de textos rodou num modelo e as imagens em outro, então não dá para falar de "a LLM" como se fosse uma coisa só.</p>
+      <p>Uma sexta peça, que ficou fora desta página, é a única das seis com volume pictórico em personagem por ser inspirada nas obras de Tamara de Lempicka. Ela contradiz uma das regras que escrevi, e quem lê aqui não tem como conferir isso. No entanto, optei por remover essa imagem do case por ela conter nudez.</p>
+      <p>E eu fui autor, executor e avaliador do mesmo experimento: escrevi o critério, rodei as peças e julguei o resultado. Registrei as predições antes de executar justamente para limitar isso, e duas das três se mostraram erradas, o que pelo menos indica que o teste tinha o que descobrir.</p>
+      <p>É um relato de prática, não um estudo.</p>
+    </div>
+  </section>
+
+  <section class="grid" id="sec-11" tabindex="-1">
+    <div class="span-label sec-num"><span class="label">11</span></div>
+    <div class="span-wide sec-title"><h3>Como usei IA neste trabalho</h3></div>
+    <div class="span-text stack">
+      <p>O experimento testa uma LLM e foi desenhado conversando com outra. Vale dizer isso com todas as letras.</p>
+      <p>O que foi meu: a leitura das peças, a lista de regras, o conceito da peça nova, a execução de todas as rodadas e o julgamento de cada resultado. O que criei junto da LLM de texto: a estruturação do método. O que deleguei: a primeira versão do texto desta página e a construção do site.</p>
+      <p>Inferências erradas que eu consegui documentar. Três vezes o modelo que me ajudava a analisar afirmou com segurança coisas que não tinha verificado. Apontou dois defeitos que não existiam nas peças geradas. E inventou uma contradição entre o que eu lembrava e o que a documentação de 2017 dizia, a partir de uma informação que o documento simplesmente não trazia.</p>
+      <p>Peguei as três porque tinha a lista de regras escrita antes e porque conheço o material.</p>
+      <p>É o mesmo mecanismo que esta página descreve, aparecendo na feitura dela.</p>
+    </div>
+  </section>
+
+  <section class="grid" id="sec-12" tabindex="-1">
+    <div class="span-label sec-num"><span class="label">12</span></div>
+    <div class="span-wide sec-title"><h3>A peça</h3></div>
+    <div class="span-full final">
+      <figure>
+        <img src="../assets/img/regras-que-ninguem-escreveu/peca-final.jpg" alt="Pôster final sobre fundo grafite. Mulher de perfil sobe a escadaria de um edifício Art Déco, com raios atrás do topo e colunas nas laterais. Texto em dourado, de cima para baixo: NINGUÉM ME DEU LICENÇA. BONITA DEMAIS PRA ISSO. ELA É MUITO AGRESSIVA. QUEM CUIDA DAS CRIANÇAS?">
+        <figcaption><p class="note">A peça fechada: saída da amostra 4, com os dois ajustes de relação que o modelo não fez (largura do título igualada à linha de baixo, respiro entre o texto e o sunburst) resolvidos por mim no Photoshop.</p></figcaption>
+      </figure>
+    </div>
+  </section>
+
+</main>
+
+<footer class="wrap closing">
+  <div class="grid">
+    <div class="span-full"><div class="accent-bar"></div></div>
+    <div class="span-text">
+      <div class="sig"><span class="a">Ruan</span><span class="b">Rocha</span></div>
+      <div class="stack">
+        <p>Sou designer e líder de design. O que me interessa é a parte do trabalho que decide o que fica: o critério que precisa existir por escrito antes de uma ferramenta entrar no processo.</p>
+        <p>Todo modelo traz um padrão de fábrica, herdado de quem o treinou. Reconhecer esse padrão, decidir o que fica dele e saber quando a plataforma chegou no limite continua sendo trabalho de design, mesmo quando a execução acelera.</p>
+      </div>
+      <div class="contact">
+        <p class="label" style="margin-bottom:8px">Contato</p>
+        <p><a href="https://www.linkedin.com/in/ruanrocha">linkedin.com/in/ruanrocha</a></p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<a class="to-top" href="#topo">Topo</a>
+
+<script>
+(function(){
+  var b=document.querySelector(".to-top"), sen=document.getElementById("sentinela");
+  if(!b||!sen||!("IntersectionObserver" in window))return;
+  b.setAttribute("data-oculto","");
+  new IntersectionObserver(function(es){
+    es.forEach(function(e){
+      if(e.boundingClientRect.top<0){b.removeAttribute("data-oculto");}
+      else{b.setAttribute("data-oculto","");}
+    });
+  }).observe(sen);
+})();
+</script>
+
+</body>
+</html>
