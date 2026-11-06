@@ -2,6 +2,14 @@
 
 Site estático. HTML escrito à mão, um arquivo CSS compartilhado, sem build, sem framework, sem dependência de JavaScript para o conteúdo existir.
 
+## Onde cada decisão mora
+
+Três lugares, três perguntas. Este arquivo responde **o que vale hoje na execução** e não contém item em aberto: se está aqui, vale. O documento de marca responde o que a marca comunica e por quê, e é onde ficam as decisões ainda abertas. O CSS e o HTML são o que está no ar.
+
+Quando os três divergem, **o que está no ar vence**, porque é o único verificável.
+
+O procedimento completo (os três estados de uma decisão, o teste de onde escrever, o que fazer quando o documento e a página discordam) está na skill `onde-registrar-decisao`.
+
 ## Estrutura
 
 ```
@@ -99,7 +107,45 @@ Usar os que existem antes de criar outro. Cada um carrega um significado fixo e 
 | --- | --- | --- |
 | `regras-que-ninguem-escreveu` | As regras que ninguém escreveu | publicado |
 
+## Decisões revistas
+
+Decisão que foi escrita, executada e não funcionou. A execução venceu. Uma linha por item, para que a mesma discussão não recomece do zero.
+
+*(nenhuma registrada ainda)*
+
+Formato: **o que foi decidido** → o que aconteceu ao executar → o que vale agora.
+
 ## Pendências conhecidas
 
 - **O texto da home não está escrito.** A estrutura existe; o texto de posicionamento vem do documento de marca e não deve ser inventado aqui.
-- O briefing de direção visual do primeiro case está desatualizado em relação à página: foi escrito antes do índice, dos blocos de critério com campo, do botão de topo e da hierarquia de cabeçalhos atual.
+
+### Migração pendente do briefing do primeiro case
+
+O documento "Site do case Laranjeira Deco, direção visual" (artefato, 29/10, 4.539 palavras) está desatualizado em relação à página e mistura três naturezas. Destino de cada parte:
+
+| Vai para | Seções |
+| --- | --- |
+| Este arquivo | Tipografia, Paleta, Grade e espaçamento, Tratamento de imagem, Responsivo |
+| Documento de marca | O que a página comunica e o que evita, Testes de aprovação |
+| Nenhum dos dois, aposentar | Mapa de slots de imagem, Estrutura da página, A marca na página |
+
+O terceiro grupo descreve a página que agora existe aqui. O HTML passou a ser a verdade sobre isso.
+
+O detalhe que o briefing tem e este arquivo ainda não: espaçamento vertical, medida de texto, faixas de uso da grade, regra de recorte ampliado, formato e peso de imagem.
+
+**Cinco decisões fechadas que nunca voltaram para o documento de marca**, onde ainda constam como não decididas. Pelo acordo, o valor passa a viver aqui e o documento de marca aponta para cá:
+
+- entrelinha e medida para texto longo: 17/30 em medida de 496px
+- rótulo em caixa alta: 14px com 0.14em, encerrando a convivência de dois valores
+- grade: 12 colunas de 80px, calha 24px, container 1224px, módulo 8px
+- favicon: quadrado tinta com a inicial em Archivo 600
+- fundo escuro: não existe modo escuro, o escuro é território da imagem
+
+Mais uma correção pendente no documento de marca sobre o critério de numeral de seção em cor com título em preto.
+
+### Em aberto, não trava nada
+
+- hex real do ouro das peças do primeiro case, hoje estimado em tela por volta de #FFC800
+- hex real do laranja institucional
+
+Os dois afetam só a regra de restrição do acento amarelo.
